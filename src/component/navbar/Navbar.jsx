@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import logo from "./assets/nav-logo.jpg";
 import { Button } from "../../ui";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./navbar.css";
 
 const Navbar = () => {
@@ -40,9 +40,9 @@ const Navbar = () => {
         </div>
 
         <div style={{ display: "flex", alignItems: "center" }}>
-          <Link to="/menu">
+          <a href="https://main.order.tryotter.com/a46f86a1-3ca6-4d29-ae1a-ced896188089" target="_blank" rel='noreferrer'>
             <Button label="ORDER NOW" classname={"order-now-1"} />
-          </Link>
+          </a>
 
           <div
             className={`hamburger-icon ${isMenuOpen ? "menu-open" : ""}`}
@@ -65,24 +65,64 @@ const Navbar = () => {
                   paddingTop: "60px",
                 }}
               >
-                <Link to="/">
-                  <a href="/">!Home of the Famous Chickenjoy</a>
-                </Link>
-                <Link to="/menu">
-                  <a href="/">Menu</a>
-                </Link>
-                <Link to="/">
-                  <a href="/">Store Locations</a>
-                </Link>
-                <Link to="/">
-                  <a href="/">About us</a>
-                </Link>
-                <Link to="/beesafe">
-                  <a href="/">Beesafe</a>
-                </Link>
-                <Link to="/">
-                  <a href="/">Contact Us</a>
-                </Link>
+                <NavLink
+                  to="/"
+                  style={{
+                    color: window.location.pathname === "/" ? "#ff5900" : "",
+                  }}
+                  end
+                >
+                  !Home of the Famous Chickenjoy
+                </NavLink>
+                <NavLink
+                  to="/menu"
+                  style={{
+                    color:
+                      window.location.pathname === "/menu" ? "#ff5900" : "",
+                  }}
+                >
+                  Menu
+                </NavLink>
+                <NavLink
+                  to="/storelocations"
+                  style={{
+                    color:
+                      window.location.pathname === "/storelocations"
+                        ? "#ff5900"
+                        : "",
+                  }}
+                >
+                  Store Locations
+                </NavLink>
+                <NavLink
+                  to="/aboutus"
+                  style={{
+                    color:
+                      window.location.pathname === "/aboutus" ? "#ff5900" : "",
+                  }}
+                >
+                  About us
+                </NavLink>
+                <NavLink
+                  to="/beesafe"
+                  style={{
+                    color:
+                      window.location.pathname === "/beesafe" ? "#ff5900" : "",
+                  }}
+                >
+                  Beesafe
+                </NavLink>
+                <NavLink
+                  to="/contactus"
+                  style={{
+                    color:
+                      window.location.pathname === "/contactus"
+                        ? "#ff5900"
+                        : "",
+                  }}
+                >
+                  Contact Us
+                </NavLink>
               </div>
             </div>
           )}

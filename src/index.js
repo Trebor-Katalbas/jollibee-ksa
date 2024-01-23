@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { Beesafe, Menu } from './pages';
+import { Aboutus, Beesafe, Contactus, Menu, Storelocations } from './pages';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +17,18 @@ const router = createBrowserRouter([
   {
     path: '/beesafe',
     element: <Beesafe />,
+  },
+  {
+    path: '/contactus',
+    element: <Contactus />,
+  },
+  {
+    path: '/aboutus',
+    element: <Aboutus />,
+  },
+  {
+    path: '/storelocations',
+    element: <Storelocations />,
   },
 ]);
 

@@ -60,9 +60,9 @@ function App() {
             alt="best-seller"
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
-          <Link to="/menu">
+          <a href="https://main.order.tryotter.com/a46f86a1-3ca6-4d29-ae1a-ced896188089" target="_blank" rel='noreferrer'>
             <Button label={"ORDER NOW"} classname={"order-now-2"} />
-          </Link>
+          </a>
         </section>
 
         <section className="second-sec">
@@ -127,7 +127,8 @@ function App() {
           </div>
           <div className="location">
             <h1>Our Locations</h1>
-            <Button label={"VIEW LOCATIONS"} classname={"location-btn"} />
+            <Link to='/storelocations'><Button label={"VIEW LOCATIONS"} classname={"location-btn"} />
+            </Link>
           </div>
         </section>
 
@@ -160,23 +161,23 @@ function App() {
               }}
             >
               <li>
-                <Link>
-                  <a href="/">Find Us</a>
+                <Link to='/storelocations'>
+                  Find Us
                 </Link>
               </li>
               <li>
                 <Link to="/menu">
-                  <a href="/">Menu</a>
+                  Menu
                 </Link>
               </li>
               <li>
-                <Link>
-                  <a href="/">About Us</a>
+                <Link to='/aboutus'>
+                  About Us
                 </Link>
               </li>
               <li>
-                <Link>
-                  <a href="/">FAQS</a>
+                <Link to='.'>
+                  FAQS
                 </Link>
               </li>
             </ul>

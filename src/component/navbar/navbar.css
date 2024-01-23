@@ -4,6 +4,9 @@
   -webkit-animation: slide-in-right 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: slide-in-right 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
+.active-link {
+  color: #ff5900;
+}
 .nav-bg {
   display: flex;
   justify-content: space-between;
@@ -55,6 +58,7 @@
 .order-now-1:hover:before,
 .order-now-1:focus:before,
 .order-now-1:active:before {
+  color: #242323;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
