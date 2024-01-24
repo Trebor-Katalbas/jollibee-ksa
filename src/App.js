@@ -28,7 +28,7 @@ function App() {
     };
   }, []);
 
-  const parallaxScale = 1 + scrollPosition * 0.0004;
+  const parallaxScale = 1 + scrollPosition * 0.0003;
 
   useEffect(() => {
     const handleResize = () => {
@@ -46,7 +46,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <> 
       <header>
         <nav>
           <Navbar />

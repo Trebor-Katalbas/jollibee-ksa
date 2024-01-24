@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Pathway+Extreme:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap");
 
-body {
-  background-color: #ffffffcc;
-}
 .order-now-2 {
   position: absolute;
   top: 70%;
@@ -35,8 +32,8 @@ body {
   animation-iteration-count: 1;
 }
 .first-sec {
-    position: relative;
-    height: 660px;
+  position: relative;
+  height: 660px;
 }
 .second-sec {
   position: relative;
