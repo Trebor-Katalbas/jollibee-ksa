@@ -84,6 +84,15 @@ const Navbar = () => {
                   Menu
                 </NavLink>
                 <NavLink
+                  to="/book-now"
+                  style={{
+                    color:
+                      window.location.pathname === "/book-now" ? "#ff5900" : "",
+                  }}
+                >
+                  Book Now
+                </NavLink>
+                <NavLink
                   to="/storelocations"
                   style={{
                     color:

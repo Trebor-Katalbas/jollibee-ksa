@@ -4,8 +4,12 @@ import { Footer, Navbar } from "./component";
 import { Link } from "react-router-dom";
 import { Button } from "./ui";
 import Marquee from "react-fast-marquee";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import elements from "./assets/side-elements.jpeg";
 import hero_img from "./assets/hero-img.jpeg";
+import hero_img_2 from "./assets/hero-img-2.jpg";
 import bs1 from "./assets/best-seller-1.jpg";
 import bs2 from "./assets/best-seller-2.jpg";
 import bs3 from "./assets/best-seller-3.jpg";
@@ -15,6 +19,25 @@ import bs5 from "./assets/best-seller-5.jpg";
 function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [gradientWidth, setGradientWidth] = useState(220);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          dots: false
+        }
+      }
+    ]
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +69,7 @@ function App() {
   }, []);
 
   return (
-    <> 
+    <>
       <header>
         <nav>
           <Navbar />
@@ -55,12 +78,27 @@ function App() {
 
       <main>
         <section className="first-sec">
-          <img
-            src={hero_img}
-            alt="best-seller"
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          />
-          <a href="https://main.order.tryotter.com/a46f86a1-3ca6-4d29-ae1a-ced896188089" target="_blank" rel='noreferrer'>
+          <Slider {...settings}>
+            <div>
+              <img
+                src={hero_img}
+                alt="best-seller"
+                style={{ width: "100%", height: "auto", objectFit: "cover" }}
+              />
+            </div>
+            <div>
+              <img
+                src={hero_img_2}
+                alt="best-seller"
+                style={{ width: "100%", height: "auto", objectFit: "cover" }}
+              />
+            </div>
+          </Slider>
+          <a
+            href="https://main.order.tryotter.com/a46f86a1-3ca6-4d29-ae1a-ced896188089"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Button label={"ORDER NOW"} classname={"order-now-2"} />
           </a>
         </section>
@@ -127,7 +165,8 @@ function App() {
           </div>
           <div className="location">
             <h1>Our Locations</h1>
-            <Link to='/storelocations'><Button label={"VIEW LOCATIONS"} classname={"location-btn"} />
+            <Link to="/storelocations">
+              <Button label={"VIEW LOCATIONS"} classname={"location-btn"} />
             </Link>
           </div>
         </section>
@@ -161,24 +200,16 @@ function App() {
               }}
             >
               <li>
-                <Link to='/storelocations'>
-                  Find Us
-                </Link>
+                <Link to="/storelocations">Find Us</Link>
               </li>
               <li>
-                <Link to="/menu">
-                  Menu
-                </Link>
+                <Link to="/menu">Menu</Link>
               </li>
               <li>
-                <Link to='/aboutus'>
-                  About Us
-                </Link>
+                <Link to="/aboutus">About Us</Link>
               </li>
               <li>
-                <Link to='.'>
-                  FAQS
-                </Link>
+                <Link to=".">FAQS</Link>
               </li>
             </ul>
           </div>
