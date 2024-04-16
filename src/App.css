@@ -33,7 +33,6 @@
 }
 .first-sec {
   position: relative;
-  height: 660px;
 }
 .second-sec {
   position: relative;
@@ -180,9 +179,18 @@
   color: #ff5900;
 }
 
+@media screen and (max-width: 1440px){
+  .order-now-2 {
+    display: none;
+  }
+  .second-sec {
+    padding: 3em 19em;
+  }
+}
+
 @media screen and (max-width: 1230px) {
   .second-sec {
-    padding: 3em 18em;
+    padding: 2em 16em;
   }
   .second-sec h1 {
     font-size: 40px;
@@ -262,17 +270,7 @@
 }
 
 @media screen and (max-width: 431px) {
-  .order-now-2 {
-    top: 50%;
-    left: 25%;
-    font-size: 16px;
-    border: none;
-    width: 200px;
-    height: 50px;
-  }
-  .first-sec {
-    height: 500px;
-  }
+  
   .second-sec {
     padding: 1em 5em;
   }

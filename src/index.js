@@ -2,9 +2,11 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider, Outlet} from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import { motion, useScroll } from 'framer-motion';
+import { useCookies } from 'react-cookie';
 import './index.css';
 import App from './App';
-import { Aboutus, Beesafe, Contactus, Menu, Storelocations } from './pages';
+import { Aboutus, Beesafe, Booknow, Contactus, Menu, Storelocations } from './pages';
+import Cookies from './component/card/Cookies';
 
 const ScrollProgressBar = () => {
   const { scrollYProgress } = useScroll();
@@ -14,15 +16,22 @@ const ScrollProgressBar = () => {
   );
 };
 
+const Layout = () => {
+  const [cookies] = useCookies(["cookieConsent"]);
+
+  return (
+    <div>
+      <ScrollProgressBar />
+      <Outlet />
+      {!cookies.cookieConsent && <Cookies />}
+    </div>
+  );
+};
+
 const routes = [
   {
     path: '/',
-    element: (
-      <div>
-        <ScrollProgressBar />
-        <Outlet />
-      </div>
-    ),
+    element: <Layout />,
     children: [
       {
         path: '/',
@@ -31,6 +40,10 @@ const routes = [
       {
         path: '/menu',
         element: <Menu />,
+      },
+      {
+        path: '/book-now',
+        element: <Booknow />,
       },
       {
         path: '/beesafe',
